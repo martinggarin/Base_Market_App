@@ -2,7 +2,7 @@ import { View, Text,ImageBackground} from 'react-native';
 import React from 'react';
 import styles from './styles';
 
-const Box = (props) => {
+const ProductBox = (props) => {
   const {item} = props;
   return (
     <View style={styles.root}>
@@ -28,4 +28,4 @@ const Box = (props) => {
     </View>
   )
 };
-export default Box
+export default ProductBox

@@ -1,16 +1,16 @@
 import { View, Text , StyleSheet, FlatList} from 'react-native'
 import React from 'react'
-import Box from '../components/box'
-import data from '../data/data';
-import Colors from '../Colors/Colors';
+import ProductBox from '../../components/ProductBox';
+import data from '../../data/data';
+import Colors from '../../Colors/Colors';
 
 const renderItem = ({item}) => {
     return(
-        <Box item={item} />
+        <ProductBox item={item} />
     );
 };
 
-const home = () => {
+const ProductsScreen = () => {
   return (
     <View style={styles.page}>
         <FlatList 
@@ -29,4 +29,4 @@ const styles = StyleSheet.create({
     }
 });
 
-export default home
+export default ProductsScreen
