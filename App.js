@@ -4,25 +4,24 @@ import Ionicons from '@expo/vector-icons/Ionicons';
 import HomeScreen from './screens/home/index';
 import ProductsScreen from './screens/merchant';
 import ProductScreen from './screens/product';
+import Router from './navigation';
 
 import Colors from './Colors/Colors';
 
 
 export default function App() {
   return (
-    <SafeAreaView style={styles.container}>
-      <StatusBar style={styles.container} barStyle={'dark-content'} />
-      <ProductScreen />
-    </SafeAreaView>
+    <View style={styles.container}>
+      <StatusBar barStyle={'dark-content'} />
+        <Router />
+    </View>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    flex:1,
     backfaceVisibility:'visible',
     backgroundColor: Colors.background,
-    alignItems: 'center',
-    justifyContent: 'center',
   },
 });
