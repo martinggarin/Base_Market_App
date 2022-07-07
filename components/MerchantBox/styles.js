@@ -8,7 +8,9 @@ const styles = StyleSheet.create({
         borderColor:'grey',
         height:150,
         justifyContent:'center',
-        width:360
+        alignContent:'center',
+        width:360,
+        alignSelf:'center'
     },
     title:{
         textAlign:'left',

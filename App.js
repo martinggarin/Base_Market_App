@@ -23,5 +23,6 @@ const styles = StyleSheet.create({
     flex:1,
     backfaceVisibility:'visible',
     backgroundColor: Colors.background,
+  
   },
 });

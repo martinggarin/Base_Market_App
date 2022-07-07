@@ -17,9 +17,9 @@ const BottomTabNav = () => {
             activeTintColor: 'black',
             headerShown:false,
             tabBarStyle:{
-                backgroundColor:Colors.surface,
+                backgroundColor:'black',
                 borderColor:Colors.surface,
-                borderTopWidth:0
+                borderTopWidth:0,
             },
       }}>
       <Tab.Screen
@@ -27,7 +27,6 @@ const BottomTabNav = () => {
         name="home"
         options={{
             showLabel:false,
-            backgroundColor:Colors.background,
           tabBarIcon: ({color}) => (
             <Ionicons name="home" color={color} size={25} />
           ),

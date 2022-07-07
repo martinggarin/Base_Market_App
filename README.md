@@ -1,1 +1,3 @@
 Something Something app for ecommerce using react native...
+
+font: Affirm, Product Sanss

@@ -28,6 +28,8 @@ const styles = StyleSheet.create({
         padding:0,
         backgroundColor: Colors.background,
         flex:1, 
+        alignContent:'center',
+        justifyContent:'center',
     }
 });
 
