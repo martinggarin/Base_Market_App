@@ -1,34 +1,59 @@
-import { View, Text, ImageBackground } from 'react-native'
-import React from 'react';
+import { View, Text, ImageBackground, ActivityIndicator} from 'react-native'
+import React, {useEffect, useState} from 'react';
+import { useRoute } from '@react-navigation/native';
 import styles from './style';
-import ProductData from '../../data/ProductData';
+import productData from '../../data/ProductData';
 import venueData from '../../data/VenueData';
 
 const ProductScreen = (props) => {
-  const {item} = ProductData;
+  const [id, setId] = useState(undefined);
+  const [image, setImage] = useState(undefined);
+
+  const route = useRoute();
+
+  useEffect(() =>{
+    if(!route.params?.id){
+      return;
+    }
+    setId(route.params.id);
+  }, [route.params?.id]);
+
+  useEffect(() =>{
+    if(!route.params?.image){
+      return;
+    }
+    setImage(route.params.image);
+  }, [route.params?.image]);
+
+  const data = productData.filter(product => product.id === id)[0]; 
+  
+  if (!data) {
+    return <ActivityIndicator />;
+  }
+
   return (
     <View style={styles.root} >
       <View style={styles.divtop}>
         <ImageBackground 
             style={styles.image} 
-            source={{uri: venueData[0].image}} 
+            source={{uri: image}} 
             resizeMode='cover'>
         </ImageBackground>
       </View>
       <View style={styles.divbot}>
         <View style={styles.div2}>
             <Text style={styles.title} >
-                Fri - 8/12 - 7:30 PM 
+                {data.venue+ ` - ` +data.date} 
             </Text>
             <Text style={styles.subtitle} >
-                Sec FLOOR Row GA - 3 Tickets 
+                {data.title+ ` - ` +data.description} 
             </Text>
         </View>
         <View style={styles.div3}>
           <View style={styles.textContainer1}></View>
             <View style={styles.textContainer}>
-              <Text style={styles.text1}>3 Tickets Together</Text>
-              <Text style={styles.text2}>$207</Text>
+              <Text style={styles.text1}>{data.title}</Text>
+              <Text style={styles.text2}>${data.price}</Text>
             </View>
         </View>
 
@@ -36,7 +61,7 @@ const ProductScreen = (props) => {
           <View style={styles.textContainer1}></View>
             <View style={styles.textContainer}>
               <Text style={styles.text1}>3 Tickets Together</Text>
-              <Text style={styles.text2}>$207</Text>
+              <Text style={styles.text2}></Text>
             </View>
         </View>
 

@@ -10,7 +10,7 @@ const MerchantBox = (props) => {
   const navigation = useNavigation();
 
   const onPress = () => {
-    navigation.navigate('Merchant', {title: item.title});
+    navigation.navigate('Merchant', {title: item.title, image:item.image});
   };
 
   return (

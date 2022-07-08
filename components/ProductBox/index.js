@@ -1,10 +1,19 @@
-import { View, Text,ImageBackground} from 'react-native';
+import { View, Text,ImageBackground, TouchableOpacity} from 'react-native';
 import React from 'react';
+import {useNavigation} from '@react-navigation/native';
 import styles from './styles';
 
 const ProductBox = (props) => {
   const {item} = props;
+
+  const navigation = useNavigation(); 
+
+  const onPress = () => {
+    navigation.navigate('Product', {id:item.id, image:item.image});
+  };
+
   return (
+    <TouchableOpacity onPress={onPress}>
     <View style={styles.root}>
       <ImageBackground 
         style={styles.image} 
@@ -26,6 +35,7 @@ const ProductBox = (props) => {
             </View>
       </ImageBackground>
     </View>
+    </TouchableOpacity>
   )
 };
 export default ProductBox
