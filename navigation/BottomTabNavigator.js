@@ -4,6 +4,7 @@ import ProfileScreen from '../screens/profile';
 import HomeScreen from '../screens/home';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import Colors from '../Colors/Colors';
+import HomeStack from './HomeStack';
 
 const Tab = createBottomTabNavigator();
 
@@ -23,7 +24,7 @@ const BottomTabNav = () => {
             },
       }}>
       <Tab.Screen
-        component={HomeScreen}
+        component={HomeStack}
         name="home"
         options={{
             showLabel:false,

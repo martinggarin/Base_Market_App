@@ -9,7 +9,8 @@ const styles = StyleSheet.create({
         height:150,
         justifyContent:'center',
         alignContent:'center',
-        width:400
+        width:400,
+        alignSelf:'center'
     },
     title:{
         textAlign:'left',

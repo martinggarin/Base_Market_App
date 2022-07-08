@@ -1,7 +1,8 @@
 import { View, Text , StyleSheet, FlatList} from 'react-native'
 import React from 'react'
 import ProductBox from '../../components/ProductBox';
-import data from '../../data/data';
+import data from '../../data/ProductData';
+import venueData from '../../data/VenueData'
 import Colors from '../../Colors/Colors';
 
 const renderItem = ({item}) => {

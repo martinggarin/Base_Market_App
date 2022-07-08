@@ -1,10 +1,20 @@
-import { View, Text,ImageBackground} from 'react-native';
+import { View, Text,ImageBackground, TouchableOpacity} from 'react-native';
 import React from 'react';
+import {useNavigation} from '@react-navigation/native';
 import styles from './styles';
 
 const MerchantBox = (props) => {
+  
   const {item} = props;
+  
+  const navigation = useNavigation();
+
+  const onPress = () => {
+    navigation.navigate('Merchant', {title: item.title});
+  };
+
   return (
+    <TouchableOpacity onPress={onPress}>
     <View style={styles.root}>
       <ImageBackground 
         style={styles.image} 
@@ -26,6 +36,7 @@ const MerchantBox = (props) => {
             </View>
       </ImageBackground>
     </View>
+    </TouchableOpacity>
   )
 };
 export default MerchantBox
