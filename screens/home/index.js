@@ -26,7 +26,7 @@ const HomeScreen = () => {
 const styles = StyleSheet.create({
     page:{
         padding:0,
-        backgroundColor: Colors.background,
+        backgroundColor: Colors.surface,
         flex:1, 
         alignContent:'center',
         justifyContent:'center',

@@ -13,9 +13,9 @@ const BottomTabNav = () => {
     return (
         <Tab.Navigator
         screenOptions={{
-            showLabel: false,
-            inactiveTintColor: '#ffbd7d',
-            activeTintColor: 'black',
+            tabBarShowLabel: false,
+            tabBarInactiveTintColor: 'grey',
+            tabBarActiveTintColor: Colors.backgroundText,
             headerShown:false,
             tabBarStyle:{
                 backgroundColor:'black',
@@ -29,7 +29,7 @@ const BottomTabNav = () => {
         options={{
             showLabel:false,
           tabBarIcon: ({color}) => (
-            <Ionicons name="home" color={color} size={25} />
+            <Ionicons name="home" color={color} size={30} />
           ),
         }}
       />
@@ -38,7 +38,7 @@ const BottomTabNav = () => {
         name="profile"
         options={{
           tabBarIcon: ({color}) => (
-            <Ionicons name="person" color={color} size={25} />
+            <Ionicons name="person" color={color} size={30} />
           ),
         }}
       />
